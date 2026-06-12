@@ -103,51 +103,45 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	    // FAZA 1: Czerwony max, Zielony rośnie (0 -> 999)
-	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 999); // R
-	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 0);   // B
+	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 999);
+	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 0);
 	    for (int i = 0; i <= 999; i++) {
-	        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, i); // G rośnie
+	        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, i);
 	        HAL_Delay(2);
 	    }
 
-	    // FAZA 2: Zielony max, Czerwony maleje (999 -> 0)
-	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 999); // G
-	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 0);   // B
+	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 999);
+	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 0);
 	    for (int i = 999; i >= 0; i--) {
-	        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, i); // R maleje
+	        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, i);
 	        HAL_Delay(2);
 	    }
 
-	    // FAZA 3: Zielony max, Niebieski rośnie (0 -> 999)
-	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 999); // G
-	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);   // R
+	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 999);
+	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);
 	    for (int i = 0; i <= 999; i++) {
-	        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, i); // B rośnie
+	        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, i);
 	        HAL_Delay(2);
 	    }
 
-	    // FAZA 4: Niebieski max, Zielony maleje (999 -> 0)
-	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 999); // B
-	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);   // R
+	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 999);
+	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);
 	    for (int i = 999; i >= 0; i--) {
-	        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, i); // G maleje
+	        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, i);
 	        HAL_Delay(2);
 	    }
 
-	    // FAZA 5: Niebieski max, Czerwony rośnie (0 -> 999)
-	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 999); // B
-	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0);   // G
+	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 999);
+	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0);
 	    for (int i = 0; i <= 999; i++) {
-	        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, i); // R rośnie
+	        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, i);
 	        HAL_Delay(2);
 	    }
 
-	    // FAZA 6: Czerwony max, Niebieski maleje (999 -> 0)
-	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 999); // R
-	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0);   // G
+	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 999);
+	    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0);
 	    for (int i = 999; i >= 0; i--) {
-	        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, i); // B maleje
+	        __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, i);
 	        HAL_Delay(2);
 	    }
 
